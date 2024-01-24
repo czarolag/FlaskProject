@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <head>
+    
+        {% block head %}
+        <title> {{page_name}}</title>
+        {% endblock %}
+       
+    </head>
+</head>
+
+
+<body>
+
+    <header class="header-content">{% block navbar %} {% endblock %} </header>
+    
+        <h1 class="base_h1"> {{ page_name }} </h1>
+    
+    {% block content %}
+        <div class="home-content">
+            <p class="base_p"> {{ page_content }} </p>
+            <img class="home-image" src="{{  url_for('static', filename='home_image.png') }}" style="max-width: 50%; max-height: 50%;" />
+        </div>
+    {% endblock %}
+</body>
+
+</html>
